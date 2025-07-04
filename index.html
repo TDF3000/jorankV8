@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Joran K. — Position Size Calculator</title>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Joran K.</h1>
+      <button id="toggle-theme" title="Toggle Dark/Light Mode">🌓</button>
+    </header>
+
+    <main class="app-main">
+      <section class="card">
+        <h2>Trade Settings</h2>
+        <div class="input-grid">
+          <label>Account Balance ($)<input type="number" id="account" /></label>
+          <label>Risk per Trade (%)<input type="number" id="riskPercent" step="0.01" /></label>
+          <label>Manual Stop Loss (%)<input type="number" id="manualStop" step="0.01" /></label><label>Leverage<input type="number" id="leverage" value="1" step="0.1" /></label>
+          <label>Risk/Reward Ratio<input type="number" id="rrr" step="0.01" /></label>
+        </div>
+        <button id="calculate">📊 Calculate</button>
+      </section>
+
+      <section class="card results" id="results">
+        <h2>Position Details</h2>
+        <!-- JS will populate this -->
+      </section>
+
+      <section class="card">
+        <h2>Trade History</h2>
+        <table id="tradeHistory">
+          <thead>
+            <tr><th>Date</th><th>Risk ($)</th><th>Position Size</th><th>P/L ($)</th><th></th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button id="clearHistory">🗑️ Clear All History</button>
+      </section>
+
+      <section class="card">
+        <h2>Charts</h2>
+        <canvas id="equityCurveChart"></canvas>
+        <canvas id="drawdownChart"></canvas>
+        <canvas id="pnlChart"></canvas>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

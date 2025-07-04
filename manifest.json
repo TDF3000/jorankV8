@@ -1,0 +1,10 @@
+
+{
+  "name": "Joran K.",
+  "short_name": "JoranK",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "icons": []
+}
